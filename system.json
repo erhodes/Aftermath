@@ -1,0 +1,16 @@
+{
+	"name": "aftermath",
+	"title": "Aftermath",
+	"description": "Eric's Aftermath system",
+	"version": "0.0.1",
+	"author": "Eric Rhodes",
+	"scripts": [],
+	"esmodules": ["module/aftermath.js"],
+	"styles": ["styles/aftermath.css"],
+	"packs": [],
+	"languages": [],
+	"gridDistance": 1,
+	"gridUnits": "meters",
+	"minimumCoreVersion": "0.7.9",
+	"compatibleCoreVersion": "0.7.9"
+}

@@ -1,0 +1,59 @@
+{
+	"Actor": {
+		"types": ["player", "npc"],
+		"templates": {
+			"common": {
+				"skills": {
+					"fitness": {
+						"value": 4
+					},
+					"agility": {
+						"value": 4
+					},
+					"firearms": {
+						"value": 8
+					},
+					"willpower": {
+						"value": 6
+					},
+					"perception": {
+						"value": 4
+					}
+				},
+				"attributes": {
+					"health": {
+						"value": 10,
+						"min": 0,
+						"max": 20
+					},
+					"resolve": {
+						"value": 10,
+						"min": 0,
+						"max": 20
+					},
+					"ranged_defence": {
+						"value": 18
+					},
+					"melee_defence": {
+						"value": 10
+					},
+					"toughness": {
+						"value": 2
+					}
+				}
+			}
+		},
+		"player": {
+			"templates": ["common"]
+		},
+		"npc": {
+			"templates": ["common"]
+		}
+	},
+	"Item": {
+		"types": ["weapon"],
+		"weapon": {
+			"damage": 5
+		}
+	}
+}

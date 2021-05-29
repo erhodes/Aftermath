@@ -1,0 +1,30 @@
+<form autocomplete="off">
+	<header class="sheet-header">
+		<img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+		<h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+	</header>
+
+	<div>
+		<label for "data.attributes.health.value">HEALTH</label>
+		<div>
+			<input type="text" name="data.attributes.health.value" value="{{data.attributes.health.value}}" data-dtype="Number"/>
+			<span> / </span>
+			<input type="text" name="data.attributes.health.max" value="{{data.attributes.health.max}}" data-dtype="Number"/>
+		</div>
+	</div>
+
+	{{!-- Skills --}}
+
+	<div class="abilities grid grid-3col">
+        {{#each data.skills as |skill key|}}
+          <div class="flexrow flex-group-center">
+            <label for="data.skills.{{key}}" class="resource-label rollable" data-roll="{{skill.value}}" data-label="{{key}}">{{key}}</label>
+            <span> : </span>
+            <label for="data.skills.{{key}}.value" class="resource-label">{{skill.value}}</label>
+          </div>
+        {{/each}}
+	</div>
+
+<span class="rollable" data-roll="5" data-label="skillName"> Click Me </span>
+
+</form>
