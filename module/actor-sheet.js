@@ -22,6 +22,22 @@ export class AftermathActorSheet extends ActorSheet {
 
 		console.log("activateListeners");
 		html.find('.rollable').click(this._onRoll.bind(this));
+		html.find('.action').click(this._onAction.bind(this));
+	}
+
+	_onAction(event) {
+		event.preventDefault();
+		const element = event.currentTarget;
+		const dataset = element.dataset;
+		const action = dataset.action;
+		const itemName = dataset.item;
+		const item = this.actor.items.find(i => i.name === itemName);
+
+		if (action == "attack") {
+			item.attack();
+		} else if (action == "reload") {
+			item.performReload();
+		}
 	}
 
 	/**

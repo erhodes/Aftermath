@@ -25,6 +25,19 @@
         {{/each}}
 	</div>
 
-<span class="rollable" data-roll="5" data-label="skillName"> Click Me </span>
+	<span class="rollable" data-roll="5" data-label="skillName"> Click Me </span>
 
+	<!-- Owned Items -->
+	<div>
+		<h2>Items</h2>
+		{{#each actor.items as |item id|}}
+			<img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+			<h4>{{item.name}}</h4>
+			<label>Ammo Count: {{item.data.ammo.value}} / {{item.data.ammo.max}} </label>
+			<h4>Actions</h4>
+			<span class="action" data-action="attack" data-item="{{item.name}}">Attack!</span>
+			<span>	</span>
+			<span class="action" data-action="reload" data-item="{{item.name}}">Reload</span>
+		{{/each}}
+	</div>
 </form>
