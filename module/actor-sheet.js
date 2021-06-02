@@ -23,6 +23,20 @@ export class AftermathActorSheet extends ActorSheet {
 		console.log("activateListeners");
 		html.find('.rollable').click(this._onRoll.bind(this));
 		html.find('.action').click(this._onAction.bind(this));
+
+		// Drag events for macros
+		if (this.actor.owner) {
+			let handler = ev => this._onDragStart(ev);
+			html.find('h4.item-header').each((i, li) => {
+				li.setAttribute("draggable", true);
+				li.addEventListener("dragstart", handler, false);
+			});
+		}
+	}
+
+	_onDragStart(event) {
+		let dragData = event.currentTarget.dataset;
+		event.dataTransfer.setData('text/plain', JSON.stringify(dragData));
 	}
 
 	_onAction(event) {
